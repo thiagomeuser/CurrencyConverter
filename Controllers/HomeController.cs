@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CurrencyConverter.Models;
 
 namespace CurrencyConverter.Controllers
 {
@@ -11,7 +12,9 @@ namespace CurrencyConverter.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            Currency objCurrency = new Currency();
+            objCurrency.Name = "Dollar";
+            return View(objCurrency);
         }
     }
 }

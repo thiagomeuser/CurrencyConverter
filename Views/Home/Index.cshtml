@@ -1,7 +1,28 @@
-﻿
+﻿@model CurrencyConverter.Models.Currency
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<div>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, Model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Abbr)
+            @*@Html.TextBoxFor(m => m.Abbr)*@
+        </div>
+        <div>
+            @Html.LabelFor(m => m.UnitaryValue)
+            @*@Html.TextBoxFor(m => m.UnitaryValue)*@
+        </div>
+        <button type="submit">Convert</button>
+    }
+
+</div>
